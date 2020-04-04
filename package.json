@@ -1,0 +1,25 @@
+{
+  "name": "florsbot-v2",
+  "version": "1.0.0",
+  "description": "Discord bot for server FORGIOS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "MrLivixx",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "11.5.1",
+    "dotenv": "^8.2.0",
+    "moment": "^2.24.0",
+    "moment-duration-format": "^2.3.2",
+    "ms": "^2.1.2",
+    "strftime": "^0.10.0",
+    "superagent": "^5.2.2"
+  },
+  "devDependencies": {
+    "console-error": "0.0.4",
+    "console-info": "0.0.5",
+    "console-warn": "0.0.4"
+  }
+}
