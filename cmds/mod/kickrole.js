@@ -1,15 +1,16 @@
-const Discord = module.require("discord.js");
-module.exports.run = async (bot,message,args) => {
-    if(!['418712700848439318', '517331770656686080', '409926512754819072'].includes(message.author.id)) return message.channel.send("Вы не имеете доступа к данной команде!");
-            if(!args[0]) return message.channel.send("Роль не указана");
-        let role = args.join(" ");
-        message.guild.members.forEach(member => {
-            if(member.roles.has(role)) {
-            member.kick(message.author.username);
-            message.channel.send(`${member} (${member.user.tag} | ${member.id}) кикнут.`);
-            }
-            });
-        }
-        module.exports.help = {
-            name: "kickrole"
-        };
+const Discord = require("discord.js");
+module.exports.run = async (bot, message, args) => {
+    if(!message.member.permissions.has("ADMINISTRATOR")) return message.channel.send(":x: | Вы не имеете доступа к данной команде.");
+    let role = message.mentions.roles.first() || message.guild.roles.get(args[0]);
+    if(!role) return message.channel.send(":x: | Роль/её ID не указаны.");
+    
+    let log = [];
+    message.guild.fetchMembers();
+    message.guild.members.filter((user) => user.roles.has(role)).forEach((user) => { user.kick(); log.push(`Кикнут пользователь **${user.user.tag}** (ID: \`${user.user.id}\`).`); });
+    
+    return message.channel.send(log.join("\n"), { code: "fix" });
+}
+
+module.exports.help = {
+    name: "kickrole"
+};
