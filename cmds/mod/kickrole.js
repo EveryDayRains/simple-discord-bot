@@ -11,6 +11,12 @@ module.exports.run = async (bot, message, args) => {
     return message.channel.send(log.join("\n"), { code: "fix" });
 }
 
+
 module.exports.help = {
-    name: "kickrole"
-};
+    name: 'kickrole',
+    description: 'Кикает участников с определённой ролью',
+    aliases: ['кикроль'],
+    category: "Модерация",
+    usages: {'kickrole роль':'Кикнет участников у кого есть роль которая упомянута'},
+}; 
+
