@@ -1,6 +1,5 @@
 const { categoryID, voiceID, vrole, voicestats} = config
 module.exports = async (client, Old, New) => {
-    console.log("test")
     if(New.user.bot) return;
     if(Old.user.bot) return;
 
