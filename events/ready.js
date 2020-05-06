@@ -18,9 +18,6 @@ module.exports = async (client) => {
           
     
         console.log(`Бот работает под ником: ${client.user.tag}!`);
-        client.generateInvite(['ADMINISTRATOR']).then(link =>{
-          console.log('Ссылка на бота:', link);
-        })
 
        async function test1() {
        client.channels.find(c => c.id === onlineid).setName(`В сети: ${client.guilds.get(guildid).presences.size}`);
