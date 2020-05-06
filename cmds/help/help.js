@@ -6,45 +6,39 @@ module.exports.run = async (client, message, args) => {
         .setDescription('**Если хотите узнать поподробнее о команде напишите `f.help` __`команда`__**')
         .setColor('5CCFFF');
      
-        function sendCommandList(message) {
-            cmdlist = []
-            commands = []
-            command_names = []
+        const sendCommandList = (message) => {
+            let cmdlist = [];
+            let commands = [];
+            let command_names = [];
 
             
             const modules = client.commands.map(command => command.help.category).filter((m, i, self) => self.indexOf(m) === i).forEach(category => {
                 cmds = client.commands.filter(command => command.help.category === category);
 
-                command_names = []
-                cmds.forEach(e => {
-                            command_names.push(`**\`${e.help.name}\`**`)
-                 
-                    
-                
-                });
-                command_names = command_names.join(' ')
+                let command_names = [];
+                cmds.forEach(e => command_names.push(`**\`${e.help.name}\`**`));
+                command_names = command_names.join(' ');
                 helpembed.addField(`${category}`, `${command_names}`, false);
               });
-              message.channel.send(helpembed)
-            
+            return message.channel.send(helpembed)
         }
 
-        function sendCommandInfo(commandName) {
-            let errEmbed = new Discord.RichEmbed()
+        const sendCommandInfo = (commandName) => {
+            let errEmbed = new Discord.RichEmbed();
 
             let command = client.commands.get(commandName) || client.commands.get(client.aliases.get(commandName));
             if(!command) {
-                client.sendErrEmbed(errEmbed, `Такой команды нет`)
+                client.sendErrEmbed(errEmbed, `Такой команды нет`);
                     return message.channel.send(errEmbed)
             }
 
-            const usages = []
+            const usages = [];
             if(!command.help.usages){
-                usages.append('Нет примеров использования')
-            }else{
-                Object.keys(command.help.usages).forEach(e => {
+                usages.append('Нет примеров использования');
+            } else {
+                for(const e in command.help.usages) {
                     usages.push(`\`${e}\` => \`${command.help.usages[e]}\``)
-                })
+                }
             }
             
             let cmdEmbed = new Discord.RichEmbed()
@@ -54,18 +48,15 @@ module.exports.run = async (client, message, args) => {
             .addField('Пример использования', `**${usages.join('\n')}**`)
             .setColor('FF7A47');
 
-            message.channel.send(cmdEmbed)
-            
+            return message.channel.send(cmdEmbed)
         }
         let cmd = args[0];
         if (!cmd) return sendCommandList(message);
-        sendCommandInfo(cmd);
+        else return sendCommandInfo(cmd);
     } catch (err) {
-        console.log(err.stack);
+        console.warn(err.stack);
     }
 
-
-    
 };
 module.exports.help = {
     name: 'help',
