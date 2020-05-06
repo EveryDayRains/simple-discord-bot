@@ -1,11 +1,17 @@
 const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
-    if(message.author.id !== config.admin) return message.channel.send(":x: Вы не имеете доступа к данной команде.");
-    const toSay = args.join(" ");
-    if(!toSay) return message.channel.send(":x: | Не указан текст для отправления.").then((m) => { message.delete(5000); m.delete(5000); });
+     if(message.author.id !== config.admin) return message.channel.send(":x: Вы не имеете доступа к данной команде.");
+     return message.deletable ? message.delete().then(_ => {
+         const txt = args.join("");
+         return txt ? message.channel.send(txt) : message.channel.send(":x: | Не указан текст для отправления.").then(m => { 
+             m.delete(5000); 
+         });
+     }) : undefined;
+//     const toSay = args.join(" ");
+//     if(!toSay) return message.channel.send(":x: | Не указан текст для отправления.").then((m) => { message.delete(5000); m.delete(5000); });
     
-    if(message.deletable) message.delete();
-    return message.channel.send(toSay);
+//     if(message.deletable) message.delete();
+//    return message.channel.send(toSay);
 }
 
 module.exports.help = {
