@@ -1,12 +1,12 @@
 {
-  "name": "florsbot-v2",
+  "name": "simple-discord-bot",
   "version": "1.0.0",
-  "description": "Discord bot for server FORGIOS",
+  "description": "Simple Discord bot for your server",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ."
   },
-  "author": "MrLivixx",
+  "author": "Sqdsh.Community",
   "license": "ISC",
   "dependencies": {
     "discord.js": "11.5.1",
