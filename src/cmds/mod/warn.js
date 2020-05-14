@@ -1,6 +1,4 @@
-    const Discord = require("discord.js");
-    const fs = require("fs");
-    const logschannel = config.logschannel
+    const {logschannel} = config
     let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));    
     module.exports.run = async (client, message, args) => {
     
@@ -21,19 +19,17 @@
         if (err) console.log(err)
       });
     
-      let warnEmbed = new Discord.RichEmbed()
+      let warnEmbed = new Discord.MessageEmbed()
       .setDescription("Выдано предупреждение пользователю:")
       .addField("Модератор: ", `<@${message.author.id}>`, true)
       .setColor("#fc6400")
-     // .setThumbnail("")
       .addField("Предупреждён:", `<@${wUser.id}>`, true)
       .addField("Канал:", message.channel, true)
       .addField("Количество предупреждений:", warns[wUser.id].warns, true)
       .addField("Причина:", reason, true);
     
-      //await client.channels.get(config.logs).send(warnEmbed)
-      await message.channel.send(warnEmbed)
-      await client.channels.get(logschannel).send(warnEmbed)
+      await message.channel.cache.send(warnEmbed)
+      await client.channels.cache.get(logschannel).send(warnEmbed)
 
 
     }

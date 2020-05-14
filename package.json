@@ -1,15 +1,15 @@
 {
   "name": "simple-discord-bot",
-  "version": "1.0.0",
+  "version": "1.6.0",
   "description": "Simple Discord bot for your server",
   "main": "index.js",
   "scripts": {
-    "start": "node ."
+    "start": "nodemon index.js"
   },
   "author": "Sqdsh.Community",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "11.5.1",
+    "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
     "moment": "^2.24.0",
     "moment-duration-format": "^2.3.2",
@@ -20,6 +20,7 @@
   "devDependencies": {
     "console-error": "0.0.4",
     "console-info": "0.0.5",
-    "console-warn": "0.0.4"
+    "console-warn": "0.0.4",
+    "nodemon": "^2.0.3"
   }
 }

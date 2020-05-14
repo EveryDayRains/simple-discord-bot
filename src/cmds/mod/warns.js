@@ -1,7 +1,3 @@
-
-const Discord = require("discord.js");
-const fs = require("fs");
-const logschannel = config.logschannel
 let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 module.exports.run = async (client, message, args) => {
 
@@ -20,7 +16,6 @@ module.exports.run = async (client, message, args) => {
   .addField("Количество предупреждений:", `[${warns[wUser.id].warns}/6] предупреждений.`, true)
 
   message.channel.send(warnEmbed);
- // await client.channels.get(config.logs).send(warnEmbed)
 
 }
 module.exports.help = {

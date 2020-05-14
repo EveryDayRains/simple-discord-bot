@@ -10,10 +10,10 @@ module.exports = (client, member) => {
         .setDescription(` Привет **${member.user.tag}**, спасибо тебе что зашёл к нам на сервер!<a:FS_meowuwu2:682026865288151109> \n Для того чтобы посмотреть всю информацию о сервере прочитай <#646854552544346112> там и авто роли. \n <#646732331654053898> - обязательный для прочтения. \n <a:FS_nyanCat:678081265420730368> Постоянная ссылка для приглашений друзей: https://discord.gg/ChCW3gC`)
         .setImage(randomImage)
         .setColor('GREEN')
-    if (joinChannel) joinChannel.send(ejoin)
-    let users = client.channels.get(members);
+    if (joinChannel) joinChannel.cache.send(ejoin)
+    let users = client.channels.cache.get(members);
     if (users) {
-        users.setName(`🤹 Кол-во юзеров: ${member.guild.members.filter(m => !m.user.bot).size}`)
+        users.setName(`🤹 Кол-во юзеров: ${member.guild.members.cache.filter(m => !m.user.bot).size}`)
          
      }
 }

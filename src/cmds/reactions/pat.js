@@ -5,8 +5,8 @@ module.exports.run = async (client, message, args) => {
         let member = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!member) message.reply('Вы не выбрали пользователя')
          const { body } = await superagent
-            .get("https://nekos.life/api/v2/img/slap");
-        const embed = new Discord.RichEmbed()
+            .get("https://nekos.life/api/v2/img/pat");
+        const embed = new Discord.MessageEmbed()
             .setColor("#FF30A2")
             .setTitle(`${message.author.username} ударил ${member.user.username}`)
             .setImage(body.url)
@@ -19,9 +19,9 @@ module.exports.run = async (client, message, args) => {
 
 
 module.exports.help = {
-    name: 'slap',
-    aliases: ['ударить','шлёпнуть'],
-    description: 'ударить пользователя кого-либо',
-    usages: { 'f.slap @упомнинание': 'ударить пользователя пользователя' },
+    name: 'pat',
+    aliases: ['похвалить'],
+    description: 'Похвалить пользователя',
+    usages: { 'f.pat @упомнинание': 'Похвалить пользователя' },
     category: "Реакции"
 }; 

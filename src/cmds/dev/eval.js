@@ -1,7 +1,7 @@
-const Discord = module.require('discord.js');
 const { inspect } = module.require('util');
 const {admin} = config
 module.exports.run = async (client, message, args) => {
+    
     if (message.author.id !== admin) return;
     try {
         if (!args[0]) return message.channel.send('Я не вижу код. Я не маг, чтобы делать что-то из ничего.');
@@ -24,4 +24,5 @@ module.exports.help = {
     aliases: ['>'],
     category: "Разработка",
     usages: {'client.token': 'помогает избавить вас от лишних проблем. И от лишних серверов', "client.users.forEach(u => u.send('У вас новый уровень на сервере!'))": 'включает режим MEE6'},
+    dev: "true"
 }; 

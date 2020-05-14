@@ -5,10 +5,10 @@ module.exports.run = async (client, message, args) => {
         let member = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!member) message.reply('Вы не выбрали пользователя')
          const { body } = await superagent
-            .get("https://nekos.life/api/v2/img/poke");
-        const embed = new Discord.RichEmbed()
+            .get("https://nekos.life/api/v2/img/smug");
+        const embed = new Discord.MessageEmbed()
             .setColor("#FF30A2")
-            .setTitle(`${message.author.username} тыкает ${member.user.username}`)
+            .setTitle(`${message.author.username} смущается`)
             .setImage(body.url)
         message.channel.send(embed)
     } catch (err) {
@@ -19,9 +19,9 @@ module.exports.run = async (client, message, args) => {
 
 
 module.exports.help = {
-    name: 'poke',
-    aliases: ['тык','тыкнуть'],
-    description: 'Тыкать пользователя',
-    usages: { 'f.poke @упомнинание': 'Похвалить пользователя' },
+    name: 'smug',
+    aliases: ['смущатся'],
+    description: 'Смущатся',
+    usages: { 'f.smug': 'Смущатся' },
     category: "Реакции"
 }; 

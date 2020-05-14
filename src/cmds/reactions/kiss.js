@@ -6,7 +6,7 @@ module.exports.run = async (client, message, args) => {
             if(!member) message.reply('Вы не выбрали пользователя')
             const { body } = await superagent
                 .get("https://nekos.life/api/v2/img/kiss");
-            const embed = new Discord.RichEmbed()
+            const embed = new Discord.MessageEmbed()
                 .setColor("#FF30A2")
                 .setTitle(`${message.author.username} поцеловал ${member.user.username}`)
                 .setImage(body.url)
