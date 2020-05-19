@@ -16,7 +16,6 @@ if(newState.channelID === voiceID) {
     ]
   }).then(ch => newState.setChannel(ch))
 }
-//удаление канала, если в нем больше не осталось человек
 if(oldState.channel && !oldState.channel.members.size && oldState.channel.parentID === categoryID && oldState.channelID !== voiceID) oldState.channel.delete();
 
     let oldUserChannel = newState.voiceChannel 
