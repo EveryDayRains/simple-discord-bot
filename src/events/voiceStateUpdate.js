@@ -14,7 +14,7 @@ if(newState.channelID === voiceID) {
         allow: ["VIEW_CHANNEL", "MANAGE_CHANNELS"]
       }
     ]
-  }).then(ch => newState.setChannel(ch))
+  }).then(ch => {newState.setChannel(ch) , ch.setUserLimit(42) })
 }
 if(oldState.channel && !oldState.channel.members.size && oldState.channel.parentID === categoryID && oldState.channelID !== voiceID) oldState.channel.delete();
 
