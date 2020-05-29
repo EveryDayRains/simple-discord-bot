@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
             .get("https://nekos.life/api/v2/img/pat");
         const embed = new Discord.MessageEmbed()
             .setColor("#FF30A2")
-            .setTitle(`${message.author.username} ударил ${member.user.username}`)
+            .setTitle(`${message.author.username} похвалил ${member.user.username}`)
             .setImage(body.url)
         message.channel.send(embed)
     } catch (err) {
