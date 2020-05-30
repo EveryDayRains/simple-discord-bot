@@ -4,7 +4,7 @@
   "description": "Simple Discord bot for your server",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "author": "Sqdsh.Community",
   "license": "ISC",
@@ -20,7 +20,6 @@
   "devDependencies": {
     "console-error": "0.0.4",
     "console-info": "0.0.5",
-    "console-warn": "0.0.4",
-    "nodemon": "^2.0.3"
+    "console-warn": "0.0.4"
   }
 }
