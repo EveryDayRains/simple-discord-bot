@@ -1,7 +1,7 @@
 {
   "name": "simple-discord-bot",
   "version": "1.6.0",
-  "description": "Simple Discord bot for your server",
+  "description": "Простой Discord бот для вашего сервера",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
