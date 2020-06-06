@@ -1,4 +1,4 @@
-const { categoryID, voiceID, vrole, voicestats} = config
+const { categoryID, voiceID, vrole} = config
 module.exports = async (client, oldState, newState) => {
 if(newState.channelID === voiceID) {
   newState.guild.channels.create("Комнатка ☁️", {
@@ -14,7 +14,7 @@ if(newState.channelID === voiceID) {
         allow: ["VIEW_CHANNEL", "MANAGE_CHANNELS"]
       }
     ]
-  }).then(ch => {newState.setChannel(ch) , ch.setUserLimit(42) })
+  }).then(ch => {newState.setChannel(ch) , ch.setUserLimit(2) })
 }
 if(oldState.channel && !oldState.channel.members.size && oldState.channel.parentID === categoryID && oldState.channelID !== voiceID) oldState.channel.delete();
 
