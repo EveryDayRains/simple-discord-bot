@@ -30,5 +30,5 @@
 # Прочее
 Темпвойсы были взяты [отсюда](https://github.com/bemovpro/Create-temporary-voice-channel)<br>
 Бот имеет недоработки и баги, если Вы нашли один, то открывайте [Issues](https://github.com/sqdshcom/simple-discord-bot/issues)<br>
-Если знаете, как пофиксить, то Вам прямиком в [Pull request](https://github.com/sqdshcom/simple-discord-bot/pulls)<br>
+Если знаете, как пофиксить, то Вам прямиком в [Pull Requests](https://github.com/sqdshcom/simple-discord-bot/pulls)<br>
 Будем рады любой помощи! <br>
