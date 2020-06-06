@@ -1,4 +1,4 @@
-const { joinleave, member s} = config
+const { joinleave, members } = config
 const images = ['https://cdn.discordapp.com/attachments/682776196727046154/695246592017694810/tenor.gif',
                'https://cdn.discordapp.com/attachments/682776196727046154/695246591535218768/tenor_3.gif',
                'https://cdn.discordapp.com/attachments/682776196727046154/695246591162056804/tenor_1.gif',
@@ -21,6 +21,3 @@ module.exports = (client, member) => {
         users.setName(`🤹 Кол-во юзеров: ${member.guild.members.filter(m => !m.user.bot).size}`)
      }
 }
-
-
-
