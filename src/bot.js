@@ -5,12 +5,12 @@ global.fs = require('fs')
 client.commands = new Discord.Collection()
 client.aliases = new Discord.Collection();
 
-    fs.readdir('./cmds', (err, files) => { 
+    fs.readdir('./src/cmds', (err, files) => { 
         if (err) console.log(err)
       
         files.forEach((element,iterator) => {
             if(!element.includes(".")) {
-                fs.readdir(`./cmds/${element}`,(err,sub_files)=>{
+                fs.readdir(`./src/cmds/${element}`,(err,sub_files)=>{
                     sub_files.forEach((elem,iterator)=>{
                         let props = require(`./cmds/${element}/${elem}`);
                         client.commands.set(props.help.name, props);
@@ -25,7 +25,7 @@ client.aliases = new Discord.Collection();
         }) 
       })
 
-fs.readdirSync('./events/').filter(file => file.endsWith('.js')).forEach(file => {
+fs.readdirSync('./src/events/').filter(file => file.endsWith('.js')).forEach(file => {
     const event = require(`./events/${file}`);
     let eventName = file.split('.')[0];
     client.on(eventName, event.bind(null, client));
