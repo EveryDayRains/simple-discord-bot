@@ -1,5 +1,5 @@
 const {logschannel} = config
-let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
+let warns = JSON.parse(fs.readFileSync("./src/warnings.json", "utf8"));
 module.exports.run = async (client, message, args) => {
 
   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("у Вас нет разрешения на использование данной команды!");
@@ -16,7 +16,7 @@ module.exports.run = async (client, message, args) => {
 
   warns[wUser.id].warns--;
 
-  fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
+  fs.writeFile("./src/warnings.json", JSON.stringify(warns), (err) => {
     if (err) console.log(err)
   });
 

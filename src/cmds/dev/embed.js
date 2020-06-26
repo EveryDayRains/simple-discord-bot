@@ -23,12 +23,5 @@ module.exports.help = {
     description: 'Отправляет ембед в формате .json',
     aliases: ['em'],
     category: "Разработка",
-    usages: {"f.embed {
-  "title": "Hello World",
-  "description": "Hello World",
-  "author": {
-    "name": "CursedMun"
-  },
-  "color": 53380
-}": 'Отправит ембед в чат'},
+    usages: {"f.embed код с эмбенд биледера" :"Выведет эмбенд"}
 }; 
