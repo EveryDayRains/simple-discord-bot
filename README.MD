@@ -1,5 +1,5 @@
 # simple-discord-bot
-Простой Discord бот для вашего сервера
+Простой Discord бот для вашего сервера [![Discord](https://discordapp.com/api/guilds/662635194884292611/widget.png)](https://discord.gg/GG9Dkhg)
 
 # Библиотеки
 Библиотека для взаимодействия с Discord API - discord.js (**v12**)
