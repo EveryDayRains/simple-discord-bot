@@ -1,10 +1,7 @@
 {
-    "prefix": "",
-    "vrole": "",
-    "categoryID": "",
-    "guildid": "",
-    "joinleave":"",
-    "admin":"",
-    "logschannel":"",
-    "ideas":""
+    "dataURL": "",
+    "token":{
+     "osu":""
+    },
+    "owner":""
 }
