@@ -5,7 +5,7 @@ class MyCommand extends Command {
     return {
       enabled: true,
       name: "userinfo",
-      description: "Магазин ролей",
+      description: "Профиль пользователя",
       usage: "userinfo [@упоминание/id]",
       aliases: ["ui", "p", "гш", "з", "гыукштащ"],
     };
