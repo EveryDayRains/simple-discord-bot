@@ -26,7 +26,7 @@ class MyCommand extends Command {
             if(member.user.bot) return;
             if(member.id == message.author.id){ return utils.error(message, 'USER_HAS_YOUR_TIER', {message: "Нельзя дать печеньку самому себе 3:"})}
             embed.setColor("#36393f")
-            embed.setDescription(`${message.author.username} подарил печенку ${member.user.username} :3`)
+            embed.setDescription(`${message.author.username} подарил печеньку ${member.user.username} :3`)
             embed.setFooter(`${this.client.config.guild.get(message.guild.id).prefix}cookie @упоминание/ID`)
         message.channel.send(embed)
         User.findOne({guildID: message.guild.id, userID: member},async(err,row) => {
