@@ -6,7 +6,7 @@ class MyCommand extends Command {
         return {
             enabled: true,
             name: 'cookie',
-            description: 'Подарить печенку пользователю',
+            description: 'Подарить печеньку пользователю',
             usage: '<@упоминание/ID>'
         };
 
