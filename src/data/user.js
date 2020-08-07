@@ -9,4 +9,4 @@ const schema = mongoose.Schema({
     cd: { type: Number, default: 0 },
     cookie: { type: Number, default: 0}
 });
-module.exports = mongoose.model("User", schema)
+module.exports = mongoose.model("User", schema);

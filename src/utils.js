@@ -2,8 +2,9 @@
 const { Embed } = require('discore.js');
 const Neko = require('nekos.life');
 const osu = require("node-osu");
-const {token,owner} = config
-var tiers = {
+const { owner } = config;
+const { token } = process.env;
+let tiers = {
     1: 'USER',
     2: 'MODERATOR',
     3: 'ADMINISTRATOR',
@@ -78,7 +79,7 @@ module.exports = {
                 break;
            case 'COOKIE':
                embed.setColor('#FF0000')
-               .setDescription(`:x: Вы уже подарили печенку. Приходите снова через 10 минут!`)
+               .setDescription(`:x: Вы уже подарили печеньку. Приходите снова через 10 минут!`)
                return message.channel.send(embed);
                break;
             default:
