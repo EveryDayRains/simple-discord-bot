@@ -28,7 +28,6 @@ module.exports = class extends Event {
                 }).then(ch => {newState.setChannel(ch) })
               }
               if(oldState.channel && !oldState.channel.members.size && oldState.channel.parentID === pv.pvct && oldState.channelID !== pv.pvch) oldState.channel.delete();
-          
         })
     }
 };

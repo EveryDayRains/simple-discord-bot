@@ -87,13 +87,15 @@ class MyCommand extends Command {
                 evaled = require('util').inspect(evaled, { depth: 0, maxArrayLength: null });
                 const tyype = eevaled[0].toUpperCase() + eevaled.slice(1)
                 if(evaled === `undefined`) evaled = `Undefined`
-                message.channel.send(`Тип: ${tyype}
-                Выполенно за: ${new Date().getTime() - message.createdTimestamp + 'ms'}
-                \n${evaled}`, {code: 'js', split: '\n'}).then(() => message.react("✅"))
-                } catch(err) {
+                message.channel.send(
+                    `Тип: ${tyype}
+                    Выполнено за: ${new Date().getTime() - message.createdTimestamp + 'ms'}
+                    \n${evaled}`, {code: 'js', split: '\n'}
+                )
+                .then(() => message.react("✅"))
+            } catch(err) {
                 message.channel.send(`\n${err}`, {code: "js", split: "\n"}).then(() => message.react("❎"))}
-                
-                }
+            }
             
         
     }
