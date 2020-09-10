@@ -1,37 +1,83 @@
-## Welcome to GitHub Pages
+# simple-discord-bot
+Простой Discord бот для вашего сервера 
 
-You can use the [editor on GitHub](https://github.com/sqdsh/simple-discord-bot/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+[![Discord](https://discordapp.com/api/guilds/662635194884292611/widget.png)](https://discord.gg/GG9Dkhg)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# Библиотеки
+Библиотека для взаимодействия с Discord API - [`discore.js`](https://github.com/zargovv/discore.js) (Based on [DiscordJS](https://github.com/discordjs/discord.js) **v12**)
+Библиотека для взаимодействия с MongoDB - [`mongoose`](https://npmjs.com/package/mongoose)
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+# Как запустить бота? 
+Для начала, установите все необходимые библиотеки: ``npm install`` <br>
+Затем укажите токены и ссылку для взаимодействия с БД в файле ``.env`` (пример в [``example.env``](./example.env)) <br>
+Также, откройте файл ``config.json`` и настройте бота под себя. <br>
+```js
+{
+    "owner": "" // id владельца
+}
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
+# Запуск бота
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sqdsh/simple-discord-bot/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+* Для запуска бота используйте ``npm start``
 
-### Support or Contact
+* Для запуска через **pm2**:
+```diff
++ Добавление и запуск: pm2 start bot.js --name simple-bot
++ Просто запуск: pm2 start simple-bot
++ Перезагрузка: pm2 restart/reload simple-bot
++ Остановка работы: pm2 stop simple-bot
++ Удаление бота (из pm2): pm2 delete simple-bot
++ Автозапуск при старте системы: pm2 save && pm2 startup
+```
+P.S. Если вы запускаете команду автозапуска не из root-пользователя, убедитесь что у вас есть права на sudo
+<br>Либо обратитесь к администратору системы для прописания команды, которую вам даст pm2
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+**Вы прекрасны!**
+
+# Как сменить стандартный префикс? Для этого вам нужно нажать [сюда](https://github.com/sqdshcom/simple-discord-bot/blob/ece80bbff12119c911a5f07a32e8a11ad0b3b3f8/src/bot.js#L31) и заменить его на свой :3
+
+
+# Прочее
+Темпвойсы были взяты [отсюда](https://github.com/bemovpro/Create-temporary-voice-channel)<br>
+Бот имеет недоработки и баги, если Вы нашли один, то открывайте [Issues](https://github.com/sqdshcom/simple-discord-bot/issues)<br>
+Если знаете, как пофиксить, то Вам прямиком в [Pull Requests](https://github.com/sqdshcom/simple-discord-bot/pulls)<br>
+Будем рады любой помощи! <br>
+
+<br> 
+<br>
+# Создание кластера для базы данных
+
+Для начала заходим на сайт https://mongodb.com и [Регистрируемся](https://account.mongodb.com/account/register) или [Входим](https://account.mongodb.com/account/login) в аккаунт.
+
+После регистрации, вас перекинет на другую страничку. Вам необходимо нажать на зеленую кнопку, после в открывщимся окне написать название вашего проекта. Нажимаем на зеленую кнопку. 
+
+![](https://imgs.mrlivixx.ml/opera_cuCMXaULuj.png)
+
+Затем нам нужно создать кластер, для этого жмём на кнопку **Build a Cluster** и затем **Create cluster** Если хотите вы можете изменить название кластера. И ждём 1-5 минут.
+
+Теперь нам нужно открыть раздел **Database Access**
+![](https://imgs.mrlivixx.ml/opera_VFvHs0sXGW.png)
+
+После перехода в данную вкладку, мы видем зеленую кнопку, с надписью **ADD NEW USER**, в открывшимся окне выставляем права "Atlas Admin". После пишите ваше имя и желаемый пароль(стоит понимать что, через эти данные вы будете входить в базу-данных. Так что запишите ваш пароль на листок или блокнот.) Сохраняем 
+![](https://camo.githubusercontent.com/680a7a724d1b993eaa7301ecdb4ef4a5e04775c9/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f3636373037323132333931343831333434342f3638363335333632373332303638303436372f494d475f32303230303330395f3034303432342e706e67)
+
+Потом идём во вкладку **Network Access**
+![](https://imgs.mrlivixx.ml/opera_PGfdBZDfX8.png)
+
+Нажиманием на клопку **ADD IP ADDRESS** 
+![](https://imgs.mrlivixx.ml/opera_IuLkQePeI6.png)
+
+И кликаем на **ALLOW ACCESS FROM ANYWHERE** 
+![](https://imgs.mrlivixx.ml/opera_1abHsyXZxs.png)
+
+[🎉] Поздравляю! Мы создали базу, теперь нам необходима ссылка чтоб подключиться к базе. Для этого опять идем во вкладку Clusters.
+
+![](https://imgs.mrlivixx.ml/opera_DtKoVpedMu.png)
+
+И жмём на кнопку **CONNECT**
+Дальше в появившемся окне жмём на **Connect your application** 
+![](https://imgs.mrlivixx.ml/opera_yGeu800yF4.png)
+Затем получаем ссылку на нашу базу данных, вместо <password> укажите пароль от пользователя и вместо <dbname> название базы которая будет юзать бота
+![](https://imgs.mrlivixx.ml/opera_96XC9195k5.png)
