@@ -23,14 +23,14 @@
 * Для запуска бота используйте ``npm start``
 
 * Для запуска через **pm2**:
-```diff
-+ Добавление и запуск: pm2 start bot.js --name simple-bot
-+ Просто запуск: pm2 start simple-bot
-+ Перезагрузка: pm2 restart/reload simple-bot
-+ Остановка работы: pm2 stop simple-bot
-+ Удаление бота (из pm2): pm2 delete simple-bot
-+ Автозапуск при старте системы: pm2 save && pm2 startup
-```
+
++ Добавление и запуск: ``pm2 start bot.js --name simple-bot``
++ Просто запуск: ``pm2 start simple-bot``
++ Перезагрузка: ``pm2 restart/reload simple-bot``
++ Остановка работы: ``pm2 stop simple-bot``
++ Удаление бота (из pm2): ``pm2 delete simple-bot``
++ Автозапуск при старте системы: ``pm2 save && pm2 startup``
+
 P.S. Если вы запускаете команду автозапуска не из root-пользователя, убедитесь что у вас есть права на sudo
 <br>Либо обратитесь к администратору системы для прописания команды, которую вам даст pm2
 
