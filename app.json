@@ -1,0 +1,41 @@
+{
+  "name": "simple-discord-bot",
+    "description": "Простой Discord бот с экономикой и базой данных MongoDB",
+    "keywords": [
+  "discord",
+  "discord-bot",
+  "js",
+  "nodejs",
+  "discordjs", 
+  "private-voice",
+  "djs",
+  "djs-v12",
+  "discord-jsv12",
+  "mongodb",
+  "mongoose",
+  "pm2",
+  "economy",
+  "discorejs"
+    
+],
+    "repository": "https://github.com/sqdsh/simple-discord-bot",
+    "env": {
+  "TOKEN": {
+    "description": "Здесь вам нужно указать токен бота",
+        "value": "token"
+  },
+  "MONGODB_URI": {
+    "description": "Сюда вы должны указать ссылку на MongoDB",
+        "value": "link"
+  },
+  "OSU_TOKEN": {
+    "description": "Здесь вам нужно указать токен OSU",
+        "value": "token"
+  }
+},
+  "buildpacks": [
+  {
+    "url": "heroku/nodejs"
+  }
+]
+}
