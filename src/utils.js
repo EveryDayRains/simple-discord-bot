@@ -2,8 +2,6 @@
 const { Embed } = require('discore.js');
 const Neko = require('nekos.life');
 const osu = require("node-osu");
-const { owner } = config;
-const { token } = process.env;
 let tiers = {
     1: 'USER',
     2: 'MODERATOR',
@@ -16,7 +14,7 @@ module.exports = {
     toMS: require('ms'),
     date: require('moment'),
     neko: new Neko(),
-    osu: new osu.Api(token.osu, {notFoundAsError: true, completeScores: false}),
+    osu: new osu.Api(process.env.OSU_TOKEN, {notFoundAsError: true, completeScores: false}),
     generateID: (length) => {
         var result           = '';
         var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -46,7 +44,7 @@ module.exports = {
             USER: true,
             MODERATOR: member.permissions.has('MANAGE_MESSAGES') || member.permissions.has('MANAGE_NICKNAMES') || member.permissions.has('KICK_MEMBERS') || member.permissions.has('BAN_MEMBERS'),
             ADMINISTRATOR: member.permissions.has('ADMINISTRATOR'),
-            BOT_OWNER: member.id == owner,
+            BOT_OWNER: member.id == process.env.OWNER,
         };
 
         return perms[tiers[tier]];
