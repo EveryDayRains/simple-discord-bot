@@ -20,6 +20,7 @@
 
 # Запуск бота
 
+## Запуск на VPS/VPS сервере.
 * Для запуска бота используйте ``npm start``
 
 * Для запуска через **pm2**:
@@ -33,6 +34,10 @@
 
 P.S. Если вы запускаете команду автозапуска не из root-пользователя, убедитесь что у вас есть права на sudo
 <br>Либо обратитесь к администратору системы для прописания команды, которую вам даст pm2
+
+## Запуск бота на [heroku](https://heroku.com)
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sqdsh/simple-discord-bot/tree/master)
 
 **Вы прекрасны!**
 
