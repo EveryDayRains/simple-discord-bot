@@ -14,7 +14,7 @@
 
 # Запуск бота
 ### Примечание.
-Для корректной работы бота необходимо включить [**Privileged Gateway Intents**](https://support.discord.com/hc/en-us/articles/360040720412-Bot-Verification-and-Data-Whitelisting#privileged-intent-whitelisting) 
+Для корректной работы бота необходимо включить [**Privileged Gateway Intents**](https://support.discord.com/hc/en-us/articles/360040720412-Bot-Verification-and-Data-Whitelisting#privileged-intent-whitelisting)(кликабельно)
 Их необходимо активировать на странице бота, иначе команды будут функционировать неправильно.
 ![](https://imgs.mrlivixx.me/372250211201543.gif)
 ## Запуск на VPS/VPS сервере.
